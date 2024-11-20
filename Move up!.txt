@@ -4,8 +4,8 @@
 3. Вывести содержание файла не используя текстовые редакторы -- cat <file>
 4. Создать файл с содержимым не используя текстовые редактор -- touch f.txt && echo "smth" >> f.txt
 5. Перенаправить stdout в stderr и обратно на примере команды kinit, ping, tracert
-1>&2 -- stderr->stdout & vice-versa ; kinit
+1>&2 -- stdout->stderr & vice-versa (0 for in, 1 for out, 2 for err)
 6. Чем отличаются stdout и stderr -- stderr есть вывод ошибок, stdout есть вывод обычной инфы
 7. Что такое stdin? -- стандартный поток ввода
-8. Как отправить весь вывод команды в пустоту -- > /dev/null
-9. Можно ли отправить одновременно stdin и stdout в пустоту -- echo <> /dev/null 
+8. Как отправить весь вывод команды в пустоту -- ls leaicheoiri >/dev/null 2>&1 OR echo "smth" &>/dev/null
+9. Можно ли отправить одновременно stdin и stdout в пустоту
