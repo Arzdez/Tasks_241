@@ -10,50 +10,61 @@
 
 ---
 
-3. **Скрипт**
-```
-#!/bin/bash
-set -euo pipefail
+3. **Скрипт**  
+    `set -e`: заставляет скрипт завершаться, если любая команда возвращает ненулевой статус (т.е. происходит ошибка).  
+    `set -u`: вызывает ошибку, если в скрипте используется необъявленная переменная.  
+    `set -o pipefail`: изменяет поведение конвейеров (pipes, `|`) так, что возвращаемый статус будет ненулевым, если любая команда в конвейере завершается с ошибкой. По умолчанию статус конвейера равен статусу последней команды. 
 
-# 1) Переместиться между директориями
-cd /home/artemiy/Документы/test_for_files_script
+    ```
+    set -euo pipefail
 
-# 2) Вывести список файлов в директории
-echo "Список файлов в директории:"
-ls
+    cd /home/artemiy/Документы
 
-# 3) Вывести список всех файлов в директории
-echo "Список всех файлов в директории:"
-ls -a
+    # 2) Вывести список файлов в директории
+    echo "Список файлов в директории:"
+    ls
 
-# 4) Создать папку с подпапками
-mkdir -p my_folder/subfolder1/my_subfolder2
+    # 3) Вывести список всех файлов в директории
+    echo "Список всех файлов в директории:"
+    ls -aR
 
-# 5) Внутри папки создать файлик и записать в него что-нибудь
-echo "ТЕКСТТТТ" > my_folder/file.txt
+    # 1) Переместиться между директориями
+    mkdir /home/artemiy/Документы/test_for_files_script
+    cd /home/artemiy/Документы/test_for_files_script
 
-# 6) Переместить файл из одной директории в другую
-mv my_folder/file.txt my_folder/subfolder1/
+    # 4) Создать папку с подпапками
+    mkdir -p folder/subfolder1/subfolder2
 
-# 7) Скопировать файл из одной директории в другую
-cp my_folder/subfolder1/file.txt my_folder/subfolder1/file_copy.txt
+    # 5) Внутри папки создать файлик и записать в него что-нибудь
+    echo "Банан" > folder/file.txt
+    echo "Ведро" >> folder/file.txt
+    echo "Ананас" >> folder/file.txt
 
-# 8) Переименовать файл
-mv my_folder/subfolder1/file_copy.txt my_folder/subfolder1/new_file_renamed.txt
+    # 6) Переместить файл из одной директории в другую
+    mv folder/file.txt folder/subfolder1/
 
-# 9) Сравнить содержимое файла
-echo "Сравнение двух файлов:"
-diff my_folder/subfolder1/file.txt my_folder/subfolder1/new_file.txt
+    # 7) Скопировать файл из одной директории в другую
+    cp folder/subfolder1/file.txt folder/subfolder1/file_copy.txt
 
-# 10) Отсортировать содержимое файла по возрастанию и убыванию
-echo "Сортировка содержимого файла по возрастанию:"
-sort my_folder/subfolder1/file.txt
+    # 8) Переименовать файл
+    mv folder/subfolder1/file_copy.txt folder/subfolder1/file_copy_renamed.txt
 
-echo "Сортировка содержимого файла по убыванию:"
-sort -r my_folder/subfolder1/file.txt
+    # 9) Сравнить содержимое файла
+    echo "Сравнение двух файлов:"
+    diff -s folder/subfolder1/file.txt folder/subfolder1/file_copy_renamed.txt
 
-# 11) Удалить все папки и файлы
-rm -r my_folder
+    # 10) Отсортировать содержимое файла по возрастанию и убыванию
+    echo "Сортировка содержимого файла по возрастанию:"
+    sort folder/subfolder1/file.txt
 
-echo "Все папки и файлы удалены."
-```
+    echo "Сортировка содержимого файла по убыванию:"
+    sort -r folder/subfolder1/file.txt
+
+    # 11) Удалить все папки и файлы
+    cd /home/artemiy/Документы
+    rm -rf test_for_files_script
+
+    echo "Все папки и файлы удалены."
+    ```
+
+    ![Вывод](image.png)
