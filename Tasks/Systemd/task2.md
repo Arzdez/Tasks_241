@@ -77,6 +77,7 @@ systemctl start create_files.service
 ```bash
 systemctl status create_files.service
 ```
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/systemd/Tasks/Systemd/images/Screenshot%202024-11-22%20164106.png)
 ## 3. Создайте таймер который будет вызывать выполнение одноимённого systemd юнита каждые 5 минут.
 ```bash
 touch /etc/systemd/system/create_files.timer
@@ -107,8 +108,9 @@ systemctl enable create_files.timer
 systemctl start create_files.timer
 ```
 ```bash
-systemctl status create_files.service
+systemctl status create_files.timer
 ```
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/systemd/Tasks/Systemd/images/Screenshot%202024-11-22%20164130.png)
 ## 4. От какого пользователя вызыаются юниты по умолчанию?
 По умолчанию, системные юниты выполняются от имени пользователя `root`.
 ## 5. Создайте пользователя от имени которого будет выполняться ваш скрипт.
@@ -146,6 +148,7 @@ systemctl restart create_files.service
 systemctl restart create_files.timer
 ```
 ## 7. Дополните ваш скрипт так, что бы он независимо от местоположения выполнялся в домашней папке того кто его вызывает.
+[Скрипт](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/systemd/Tasks/Systemd/script.sh)
 ```bash
 #!/bin/bash
 
