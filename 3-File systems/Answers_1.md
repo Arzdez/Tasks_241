@@ -82,4 +82,14 @@ mkfs.ext4 /dev/sdb1
     - sysfs – псевдофайловая система, предоставляющая интерфейс к структурам данных ядра. Обычно монтируется в /sys.
     - tmpfs – нужна для размещения пользовательских файлов непосредственно в оперативной памяти ПК. Монтируется в /tmp.
     - cifs (?) - сетевой протокол для доступа к файловым системам через сеть, основанный на SMB (Server Message Block)
-![Вывод точек монтирования]()
+    
+<img src="https://github.com/heta76/Tasks_241/blob/master/3-File%20systems/Снимок%20экрана%202024-11-22%20220631.png" alt="Alt text" title="Optional title">
+
+**7)Как можно получить информацию о системе используя лишь команду cat? вывести ифонмацию о процессоре и состоянии памяти системы**
+
+информация о процессоре:
+<img src="https://github.com/heta76/Tasks_241/blob/master/3-File%20systems/Снимок%20экрана%202024-11-22%20221034.png" alt="Alt text" title="Optional title">
+
+информация о состоянии памяти:
+
+<img src="https://github.com/heta76/Tasks_241/blob/master/3-File%20systems/Снимок%20экрана%202024-11-22%20221339.png" alt="Alt text" title="Optional title">
