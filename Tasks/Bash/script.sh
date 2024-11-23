@@ -132,11 +132,7 @@ cp /etc/fstab /etc/fstab.bak
 if grep -q "UUID=$UUID" /etc/fstab; then
 echo "Запись с UUID=$UUID уже существует в /etc/fstab. Пропуск добавления."
 else
-# Добавление
-09:54
-
-
-записи в /etc/fstab
+# Добавление записи в /etc/fstab
 echo "Добавление записи в /etc/fstab..."
 echo "UUID=$UUID /mnt ext4 defaults 0 2" » /etc/fstab
 fi
