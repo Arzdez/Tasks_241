@@ -13,3 +13,23 @@
 
 **3) Напишите скрипт который выполнит автоматически действия из блока работы с файлами (не забудьте включить set -euo pipefail для того, чтобы ваш скрипт было удобнее отлаживать. Опишите, что включают эти флаги).**
 
+```sh
+#!/bin/bash
+set -euo pipefail
+cd ~
+ls
+ls -la
+mkdir dir1 && mkdir dir1/dir2
+echo "Some text abc bla bla 2" > dir1/dir2/filetest
+mv dir1/dir2/filetest dir1
+cp dir1/filetest dir1/dir2
+mv dir1/filetest dir1/new_name
+diff -s dir1/new_name dir1/dir2/filetest
+sort -r dir1/new_name
+rm -r dir1
+```
+
+*set -euo pipefail флаги:*
+- -e - немедленно завершить раблоту, если какая-либо команда имеет ненулевой статус завершения.
+- -u - вывод ошибок, связанных с переменными. Ссылка на переменную, которая была ранее не определена является ошибкой.
+- -o pipefail - если какая-либо команда в pipeline завершается неудачно, весь скрипт завершается.
