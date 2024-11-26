@@ -46,7 +46,7 @@ RAID (англ. redundant array of independent/inexpensive disks, избыточ
 
 **4. Проверье всё ли работает**
 
-![alt text](image.png)
+` mdadm --detail /dev/md0 `
 
 **Удалите raid0 и создайте raid1**
 
