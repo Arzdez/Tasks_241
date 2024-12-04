@@ -14,7 +14,7 @@
 systemctl status smb
 ```
 <div style="text-align: center;">
-  <img src="Screnshoots\screen1.png" alt="Мой скриншот" />
+  <img src="Screnshoots\Screen1.png" alt="Мой скриншот" />
 </div>
 
 **Информация о службе Samba SMB Daemon (`smb.service`)**
@@ -63,7 +63,7 @@ systemctl status smb
 sudo systemctl stop smb # Active : Inactive(dead)
 ```
 <div style="text-align: center;">
-  <img src="Screnshoots\screen2.png" alt="Мой скриншот" />
+  <img src="Screnshoots\Screen2.png" alt="Мой скриншот" />
 </div>
 
 
@@ -85,7 +85,7 @@ sudo systemctl enable smb
 ```
 
 <div style="text-align: center;">
-  <img src="Screnshoots\screen3.png" alt="Мой скриншот" />
+  <img src="Screnshoots\Screen3.png" alt="Мой скриншот" />
 </div>
 
 
