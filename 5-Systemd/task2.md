@@ -2,7 +2,42 @@
 
 1) Создайте скрипт, который создаёт папку, заполняет её файлами (имена 1-4) и записывает в них информацию о текущей дате, версии ядра, имени компьютера и списке всех файлов в домашнем каталоге пользователя, от которого выполняется скрипт (не забудьте сделать проверку на существование файлов и папок).
 
+```sh
+#!/bin/bash
+set -euo pipefail
+M_DIR="$HOME/folder"
 
+if [ ! -d "$M_DIR" ]; then
+    mkdir "$M_DIR"
+    echo "Папка folder успешно создана!"
+else
+    echo "Папка обнаружена |\/|"
+fi
+
+# mkdir folder
+# touch folder/1 && date > folder/1
+# touch folder/2 && cat /proc/version > folder/2
+# touch folder/3 && hostname > folder/3
+# touch folder/4 && ls -la > folder/4
+
+for i in {1..4}; do
+    if [ ! -f "$M_DIR/$i" ]; then
+        touch $M_DIR/$i
+        echo "Файл $i успешно создан!"
+        if [ "$i" == 1 ]; then
+             date > $M_DIR/1
+        elif [ "$i" == 2 ]; then
+             cat /proc/version > $M_DIR/2
+        elif [ "$i" == 3 ]; then
+             hostname > $M_DIR/3
+        else
+             ls -la > $M_DIR/4
+    fi
+    else
+        echo "Файл $i обнаружен |\/|"
+fi
+done 
+```
 
 2) Создайте юнит, который будет вызывать этот скрипт при запуске. Проверьте работоспособность.
 
