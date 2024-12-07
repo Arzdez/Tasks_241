@@ -34,6 +34,7 @@
 
 ```bash
 usermod -aG adm user1
+usermod -aG wheel user1
 usermod -aG user1 user2
 ```
 Пользователь user2 будет добавлен в группу user1 (группу с именем того же пользователя). Теперь у пользователя user2 будет доступ к файлам и ресурсам, которые принадлежат группе user1
@@ -42,7 +43,7 @@ usermod -aG user1 user2
 <div style="text-align: center;">
   <img src="Screnshoots\screen2.png" alt="Мой скриншот" />
 </div>
-
++ группа wheel
 
 
 **3) Что такое права доступа? Выведите права доступа на файлы в директории пользователя**
