@@ -1,7 +1,7 @@
 **1. Выведите содержимое fstab. Что хранится в fstab?**
 
 ```bush
-cat /etc/fstab
+cat /etc/fstab 
 ```
 
 ![image](https://github.com/user-attachments/assets/30629e8d-7db5-4838-ab2b-509822b1f6a7)
