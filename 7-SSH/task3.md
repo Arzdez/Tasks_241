@@ -22,7 +22,7 @@ ssh-keygen -t [тип_ключа]
 
 В Windows:
 
-C:\Users\[пользователь]\.ssh
+C:/Users/[пользователь]/.ssh
 
 В Linux:
 
