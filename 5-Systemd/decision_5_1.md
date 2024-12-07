@@ -45,11 +45,7 @@ systemctl status smb
 - **Memory:** 6.9 MB.
 - **CPU:** 37 ms.
 
-### 7. Контрольная группа (Механизм отслеживания использования ресурсов)
-- **CGroup:** `/system.slice/smb.service`.
-
-
-### 8. Логи
+### 7. Логи
 
 - `дек 04 21:09:03 host-15 systemd[1]: Starting Samba SMB Daemon...`
 - `дек 04 21:09:03 host-15 smbd[3646]: smbd version 4.19.9-alt1 started.`
