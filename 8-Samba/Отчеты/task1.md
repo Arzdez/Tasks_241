@@ -43,7 +43,6 @@
         create mask = 0555
         directory mask = 0555
     ```
-    Все секции очевидны, кроме последней - определяет возможность доступа к каталогу без пароля (гостевой).
 
     Перезапускаем службу с помощью `systemctl restart smb.service nmb.service` и проверяем все ли норм с конфигом:  
     ![Вывод](image.png)
@@ -131,10 +130,8 @@
         writable = yes
         read only = no
         guest ok = no
-        create mask = 0770
-        directory mask = 0770
+        create mask = 0777
+        directory mask = 0777
         write list = @smb_full_access_group
-        read list = @smb_readonly_group
+        read list = @smb_full_access_group, @smb_readonly_group
     ```
-
-
