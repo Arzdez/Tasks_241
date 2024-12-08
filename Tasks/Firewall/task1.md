@@ -5,7 +5,7 @@ apt-get install iptables
 ```
 ## 2. Проверьте осталась ли возможность подключения по ssh к вашему серверу.
 ```bash
-nc -zv 95.31.204.147 234
+iptables -L -v
 ```
 ```bash
 ssh student@95.31.204.147 -p 234
@@ -34,10 +34,38 @@ ssh student@95.31.204.147 -p 234
 
 ## 4. Откройте нужный порт на сервере чтобы восстановить подключение.
 ```bash
-iptables -A INPUT -p tcp --dport 4005 -j ACCEPT
+iptables -A INPUT -p tcp --dport 234 -j ACCEPT
 ```
 ## 5. Это будет udp или tcp порт?
 SSH использует TCP протокол для установления соединений.
 # Сохраняем
 ## 6. Сохраняются ли записанные вами правила после перезагрузки?
+Нет, не сохраняются.
 ## 7. Как их сохранить?
+```bash
+vim /etc/systemd/system/iptables-restore.service
+```
+```ini
+[Unit]
+Description=Restore iptables firewall rules
+After=network-pre.target
+Wants=network-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/iptables-restore /etc/sysconfig/iptables
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+`After=network-pre.target` и `Wants=network-pre.target` обеспечат запуск этого юнита до запуска сетевых сервисов, чтобы правила были применены до их старта.
+```bash
+systemctl daemon-reload
+```
+```bash
+sudo systemctl enable iptables-restore.service
+```
+```bash
+sudo systemctl start iptables-restore.service
+```
