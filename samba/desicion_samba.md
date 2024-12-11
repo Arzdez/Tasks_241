@@ -186,3 +186,7 @@ sudo nano /etc/samba/smb.conf
 ```bash
 sudo systemctl restart smb
 ```
+
+<div style="text-align: center;">
+  <img src="Screnshoots\Screen3.png" alt="Мой скриншот" />
+</div>
