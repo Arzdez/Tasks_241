@@ -41,11 +41,38 @@ done
 
 2) Создайте юнит, который будет вызывать этот скрипт при запуске. Проверьте работоспособность.
 
+```sh
+[Unit]
+Description = This is a test unit!
+After=network.target
 
+[Service]
+ExecStart=/home/systemd-script
+User=ilya
+Group=ilya
+Type=oneshot
+WorkingDirectory=/home/ilya
+
+[Install]
+WantedBy=multi-user.target
+```
+
+![image](https://github.com/user-attachments/assets/fc7f812b-cb46-4d63-977d-0af64b650c96)
 
 3) Создайте таймер, который будет вызывать выполнение одноимённого systemd юнита каждые 5 минут.
 
+```sh
+[Unit]
+Description=Таймер для периодического запуска myunit.service
+Requires=myunit.service
 
+[Timer]
+Unit=myunit.service
+OnUnitActiveSec=5m
+
+[Install]
+WantedBy=timers.target
+```
 
 4) От какого пользователя вызываются юниты по умолчанию?
 
@@ -53,11 +80,12 @@ done
 
 5) Создайте пользователя, от имени которого будет выполняться ваш скрипт.
 
-
+Добавили
 
 6) Дополните юнит информацией о пользователе, от которого должен выполняться скрипт.
 
-
+Дополнили
 
 7) Дополните ваш скрипт так, чтобы он независимо от местоположения всегда выполнялся в домашней папке того, кто его вызывает.
 
+Дополнили
