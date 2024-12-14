@@ -52,7 +52,7 @@ ls -ld /srv/samba/shared_folder
 
 ```bash
 sudo mkdir -p /srv/samba/shared_folder_with_write
-sudo chmod 711 /srv/samba/shared_folder_with_write
+sudo chmod 111 /srv/samba/shared_folder_with_write
 ```
 ```bash
 sudo chown -R nobody:users /srv/samba/shared_folder_with_write
@@ -88,7 +88,7 @@ ls -ld /srv/samba/shared_folder
 
 ```bash
 sudo mkdir -p /srv/samba/shared_folder_group
-sudo chmod 770 /srv/samba/shared_folder_group
+sudo chmod 070 /srv/samba/shared_folder_group
 ```
 
 ```bash
