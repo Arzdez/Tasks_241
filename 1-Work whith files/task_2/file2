@@ -1,0 +1,6 @@
+PING vk.com (87.240.132.78) 56(84) bytes of data.
+64 bytes from srv78-132-240-87.vk.com (87.240.132.78): icmp_seq=1 ttl=53 time=45.0 ms
+
+--- vk.com ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 45.016/45.016/45.016/0.000 ms
