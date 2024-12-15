@@ -62,15 +62,16 @@
 
 ---
 
-678. **Подключаемся к самбе**
-    Не получилось:  
-    ![Вывод](image-9.png)
+67. **Подключаемся к самбе**  
+    Не получилось:
+
 
     Открываем порт самбы:
     ```
-    sudo firewall-cmd --zone=public --add-service=samba --permanent
+    firewall-cmd --zone=public --add-service=samba --permanent
     ```
-    ![Вывод](image-10.png)
-
-    Проверяем:
     
+9. **Делаем изменения постоянными**  
+    ```
+    firewall-cmd --runtime-to-permanent
+    ```
