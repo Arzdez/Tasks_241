@@ -152,3 +152,8 @@ setfacl -m g:group_no_access:--- /srv/samba/mixed_access_share
 systemctl restart smb
 systemctl restart nmb
 ```
+
+## Подтверждение, что папка видна из сети
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/samba/Tasks/Samba/images/photo_2024-12-17_20-48-04.jpg)
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/samba/Tasks/Samba/images/photo_2024-12-17_20-48-10.jpg)
+Там не только добавленные папки из этого задания, я еще дополнительно добавляла.
