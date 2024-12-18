@@ -1,4 +1,4 @@
-# Cети
+![image](https://github.com/user-attachments/assets/e94ec941-a541-4fa1-a03e-7cc10b48eaf2)# Cети
 ## 1. Выведите список интерфейсов, какими способами можно это сделать?
 ```bash
 ip a
@@ -7,18 +7,45 @@ ip a
 ```bash
 ifconfig
 ```
+или
+```bash
+ip addr show
+```
 ![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/network/Tasks/Network/images/Screenshot%202024-12-17%20213133.png)
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/network/Tasks/Network/images/Screenshot%202024-12-18%20200949.png)
 ## 2. Попробуйте изменить ip адрес.
 ```bash
 ip addr add 190.160.1.100/24 dev enp0s3
 ```
-![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/network/Tasks/Network/images/Screenshot%202024-12-17%20213404.png)
+```bash
+ip addr del 192.168.1.100/24 dev enp0s3
+```
+```bash
+ip route add default via 190.160.1.0
+```
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/network/Tasks/Network/images/Screenshot%202024-12-18%20200530.png)
 ## 3. Попробуйте добавить несколько ip адресов на сетевую карту.
-
+```bash
+ip addr add 190.160.1.101/24 dev enp0s3
+ip addr add 190.160.1.102/24 dev enp0s3
+```
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/network/Tasks/Network/images/Screenshot%202024-12-18%20201359.png)
 ## 4. Выведите список маршрутов.
-
+```bash
+ip route show
+```
+```bash
+ip r
+```
+```bash
+route -n
+```
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/network/Tasks/Network/images/Screenshot%202024-12-18%20202023.png)
 ## 5. Выведите arp таблицу.
-
+```bash
+ip neigh show
+```
+![](https://github.com/LunisLinus/alt_linux_sonya/blob/sonya_tasks/network/Tasks/Network/images/Screenshot%202024-12-18%20202350.png)
 ## 6. Что такое ip адрес?
 IP-адрес (Internet Protocol Address) — это уникальный числовой идентификатор устройства в сети, использующийся для обмена данными между устройствами. Он может быть в формате IPv4 (например, 192.168.1.1) или IPv6 (например, 2001:0db8:85a3:0000:0000:8a2e:0370:7334).
 
