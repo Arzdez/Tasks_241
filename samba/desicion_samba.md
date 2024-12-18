@@ -34,6 +34,16 @@ sudo nano /etc/samba/smb.conf
    force user = nobody
 ```
 
+[shared_folder]
+   path = /srv/samba/shared_folder
+   browsable = yes
+   read only = no
+   guest ok = yes
+   valid users = mostov
+
+
+
+
 ```bash
 sudo systemctl restart smb
 ```
@@ -52,7 +62,7 @@ ls -ld /srv/samba/shared_folder
 
 ```bash
 sudo mkdir -p /srv/samba/shared_folder_with_write
-sudo chmod 711 /srv/samba/shared_folder_with_write
+sudo chmod 755 /srv/samba/shared_folder_with_write
 ```
 ```bash
 sudo chown -R nobody:users /srv/samba/shared_folder_with_write
@@ -77,10 +87,10 @@ sudo systemctl restart smb
 ```
 
 ```bash
-ls -ld /srv/samba/shared_folder
+ls -ld /srv/samba/shared_folder_with_write
 ```
 <div style="text-align: center;">
-  <img src="Screnshoots\Screen1.png" alt="Мой скриншот" />
+  <img src="Screnshoots\Screen4.png" alt="Мой скриншот" />
 </div>
 
 
@@ -187,6 +197,39 @@ sudo nano /etc/samba/smb.conf
 sudo systemctl restart smb
 ```
 
+
+```bash
+smbclient -L //10.0.2.15 -U mostov
+```
+
 <div style="text-align: center;">
   <img src="Screnshoots\Screen3.png" alt="Мой скриншот" />
+</div>
+
+
+<div style="text-align: center;">
+  <img src="Screnshoots\Screen5.png" alt="Мой скриншот" />
+</div>
+
+Новый ip виртуалки - 192.168.0.103
+
+```bash
+smbclient -L //192.168.0.103 -U mostov
+```
+
+<div style="text-align: center;">
+  <img src="Screnshoots\Screen6.png" alt="Мой скриншот" />
+</div>
+
+```bash
+ssh mostov@192.168.0.103  
+```
+
+<div style="text-align: center;">
+  <img src="Screnshoots\Screen7.png" alt="Мой скриншот" />
+</div>
+
+
+<div style="text-align: center;">
+  <img src="Screnshoots\Screen8.png" alt="Мой скриншот" />
 </div>
