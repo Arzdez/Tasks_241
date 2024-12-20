@@ -14,8 +14,9 @@ systemctl enable firewalld
 
 ![alt text](image-2.png)
 
-**3. Если её нет то откройте порт
-если бы подключения не было, то надо писать**
+**3. Если её нет то откройте порт**
+
+если бы подключения не было, то надо писать
 ```
 sudo firewall-cmd --add-service=ssh --permanent
 sudo firewall-cmd --reload
